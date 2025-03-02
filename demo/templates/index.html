@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templating Demo</title>
+</head>
+<body>
+    <h1>Welcome to {{ loc }}. My name is {{person.name}}.</h1>
+    <p>person name : {{ person.name|title}}</p>
+    <p>person age : {{ person.age}}</p>
+    <p>person hobbies : {{ person.hobbies}}</p>
+
+    <p>
+        <strong>hobbies ({{ person.hobbies|length }})</strong>
+
+        <ul>
+            {% for hobby in person.hobbies %}
+                <li>{{hobby}}</li>
+            {% endfor %}
+        </ul>
+    </p>
+
+    <p> {{person.name|title}} is a
+        {% if person.gender == "M" %}
+        Male
+        {% elif person.gender == "F" %}
+        Female
+        {% else %}
+        Non Binary
+        {% endif %}
+        </p>
+    
+    
+</body>
+</html>
